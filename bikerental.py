@@ -26,6 +26,7 @@ while True:
     3 Exit            
     '''))
 
+if uc == 1:
     if uc == 1:
         obj.display_bikes()
     elif uc == 2:
