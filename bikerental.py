@@ -1,40 +1,33 @@
-class BikeShop: 
+class bikeshop:
     def __init__(self, stock):
         self.stock = stock
-
-    def display_bikes(self):
-        print("Total bikes:", self.stock)
-
-    def rent_a_bike(self, q):
-        if q <= 0:
-            print("Enter a positive value greater than zero.")
-        elif q > self.stock:
-            print(f"Not enough bikes in stock. Available bikes: {self.stock}")
-        else:
-            self.stock -= q
-            print(f"Total Price: {q * 100}")
-            print(f"Total Bikes left: {self.stock}")
-
-# Create the bike shop object with an initial stock of 100 bikes
-obj = BikeShop(100)
-
+    def displaybikes(self):
+        print("Total bikes", self.stock)
+    def rentforbike(self, q):
+        
+        if q<=0:
+            
+            print("Enter the positive value greater than zero")
+        if  q>self.stock:
+            print("please enter the value less than stock")
+            
+        else :
+            self.stock = self.stock -q
+            print("Total Price ", q*100)
+            print("total bikes", self.stock)
 while True:
-    # Display menu options
-    uc = int(input('''
-    1 Display Stocks
-    2 Rent a Bike
-    3 Exit            
-    '''))
-
-if uc == 1:
-    if uc == 1:
-        obj.display_bikes()
-    elif uc == 2:
-        # Get number of bikes user wants to rent
-        q = int(input("Enter the number of bikes you want to rent: "))
-        obj.rent_a_bike(q)  # Call the method to rent bikes
-    elif uc == 3:
-        print("Exiting the program. Thank you for using our service!")
-        break
+    obj = bikeshop(100)
+    uc = int(input(""" 
+                   1. display stock
+                   2. Rent a bike
+                   3. Exit.
+                   """))
+    if uc ==1:
+        obj.displaybikes()
+    elif uc==2:
+        n=int(input("Enter the quantity"))
+        obj.rentforbike(n)
     else:
-        print("Invalid option. Please choose a valid option.")
+        break
+        
+    
